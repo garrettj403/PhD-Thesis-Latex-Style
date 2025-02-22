@@ -1,0 +1,111 @@
+
+\chapter{Introduction}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% INTRODUCTION
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+In this thesis, we investigate new techniques to increase the sensitivity of Superconductor/Insulator/Superconductor (SIS) receivers. These receivers are commonly used in astronomy for high resolution spectroscopy at frequencies between ${\sim}$100~GHz and ${\sim}$1.3~THz. Among other applications, these measurements are vital for studying the emission lines from cold molecular gas in the interstellar medium. Here, we present two new SIS receiver projects centred around 230~GHz. The first is an SIS receiver with wide instantaneous bandwidth, which allows multiple emission lines to be observed simultaneously. The second is an array of SIS receivers, which allows for more pixels to be contained within a single telescope, thereby increasing the mapping speed and field-of-view. In addition to this work, we also present observations of molecular gas in intermediate redshift galaxies, i.e., galaxies that are approximately 300~million to 5~billion light-years away.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% MILLIMETRE WAVE ASTRONOMY
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Millimetre-wave astronomy}\label{sec:mmwave-astronomy}
+
+\lipsum[2-4]
+
+\subsection*{Modern SIS receivers}
+
+\lipsum[2-4]
+
+\begin{table}[!p]
+\centering
+\begin{threeparttable}
+\caption[Millimetre and submillimetre wavelength observatories.]{Millimetre and submillimetre wavelength observatories employing SIS receivers.}\label{tab:mm-telescopes}
+\begin{tabular}{llccc} \toprule
+Telescope$^a$    & Location & Elevation & Dish diameter$^b$ & Surface error \\ 
+                 &          & (m)       & (m)               & (\um{} rms)   \\ \midrule
+AST/RO$^\dagger$ & Antarctica & 2,800       & 1.7           & 9    \\
+SPT\hspace{2.5cm}  & ``\hspace{2.5cm} & 2,800 & 10          & 20   \\
+LLAMA$^\ddagger$ & Argentina & 4,820        & 12            & 15   \\
+SST              & ``       & 2,490         & 1.5           & 20   \\
+SMT/HTT          & Arizona  & 3,185         & 10            & 15   \\
+CARMA$^\dagger$  & California & 2,200       & $6\times10.4$ & 30   \\
+                 &          &               & $9\times6.1$  & 30   \\
+                 &          &               & $8\times3.5$  & 30   \\
+ALMA             & Chile    & 5,040         & $54\times12$  & 25   \\
+                 &          &               & $12\times7$   & 20   \\
+APEX             & ``       & 5,100         & 12            & 17   \\
+ACT              & ``       & 5,190         & 6             & 31   \\
+ASTE             & ``       & 4,800         & 10            & 19   \\
+NANTEN2          & ``       & 4,800         & 4             & 20   \\
+CCAT$^*$         & ``       & 5,612         & 6             & --   \\
+CCOSMA           & China    & 4,300         & 3             & 30   \\
+NOEMA$^\ddagger$ & France   & 2,550         & $12\times15$  & 50   \\
+JCMT             & Hawaii   & 4,092         & 15            & 24   \\
+CSO$^\dagger$    & ``       & 4,140         & 10.4          & 13   \\ 
+SMA              & ``       & 4,080         & $8\times6$    & 13   \\
+Nobeyama 45~m    & Japan    & 1,350         & 45            & 65   \\
+LMT              & Mexico   & 4,640         & 50            & 31   \\
+IRAM 30~m        & Spain    & 2,850         & 30            & 50   \\ \midrule
+SOFIA            & Airplane & 13,700        & 2.7           &      \\
+HSO              & Satellite @ L2 & --      & 3.5           & 2.5  \\ \bottomrule
+\end{tabular}
+\begin{tablenotes}\footnotesize
+\item[] \textbf{Note:} This table only includes telescopes with heterodyne receivers above 200~GHz. The telescopes are organised by location. Some of the information was pulled from~\cite{Graham2013}.
+\item[$a$] Telescopes: 
+\emph{Antarctic Submillimeter Telescope and Remote Observatory} (AST/RO), 
+\emph{South Pole Telescope} (SPT), 
+\emph{Large Latin American Millimeter Array} (LLAMA),
+\emph{Solar Submillimeter Telescope} (SST),
+\emph{Submillimeter Telescope} (SMT; previously the \emph{Heinrich Hertz Telescope}/HHT), 
+\emph{Combined Array for Research in Millimeter-wave Astronomy} (CARMA),
+\emph{Atacama Large Millimeter/submillimeter Array} (ALMA),
+\emph{Atacama Pathfinder Experiment} (APEX),
+\emph{Atacama Cosmology Telescope} (ACT),
+\emph{Atacama Submillimeter Telescope Experiment} (ASTE),
+\emph{Cerro Chajnantor Atacama Telescope} (CCAT),
+\emph{China-Cologne Observatory for Submillimeter Astronomy} (CCOSMA; previously KOSMA),
+\emph{Northern Extended Millimeter Array} (NOEMA; an extension of the \emph{Plateau de Bure Interferometer}/PdBI),
+\emph{James Clerk Maxwell Telescope} (JCMT), 
+\emph{Caltech Submillimeter Observatory} (CSO),
+\emph{Submillimeter Array} (SMA), 
+\emph{Large Millimeter Telescope} (LMT), 
+\emph{Stratospheric Observatory for Infrared Astronomy} (SOFIA), and
+\emph{Herschel Space Observatory} (HSO).
+\item[$b$] Interferometers are denoted as (\emph{number of dishes})$\times$(\emph{dish diameter}).
+\item[$\dagger$] Decommissioned.
+\item[$\ddagger$] Under construction.
+\item[$*$] Proposed.
+\end{tablenotes}
+\end{threeparttable}
+\end{table}
+
+\lipsum[2-4]
+
+\begin{figure}[!htb]
+\centering
+\input{pgf/alma-tn.pgf}
+\caption[Noise temperature of the ALMA receivers.]{The noise temperature of the ALMA SIS receivers. The solid horizontal lines represent the ALMA noise temperature specifications, and the dashed lines are the values that must be met over at least 80\% of the band. The dots are the measured noise temperature values from the literature:
+Band~3 \citea{Claude},
+Band~4 \citea{Asayama2014}, 
+Band~5 \citea{Billade2012},
+Band~6 \citea{Ediss2004},
+Band~7 \citea{Mahieu2012},
+Band~8 \citea{Shan2005},
+Band~9 \citea{Baryshev2015}, and
+Band~10 \citea{Fujii2013}. 
+Note that the Band~3 results are out-dated; more recent results can be found in~\cite{Kerr2014}, but this paper does not list the noise temperature versus LO frequency. Also note that Bands 3--7 are SSB receivers and Bands 8--10 are DSB receivers.}
+\label{fig:alma-tn}
+\end{figure}
+
+\lipsum[2-4]
