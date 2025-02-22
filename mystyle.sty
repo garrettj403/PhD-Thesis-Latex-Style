@@ -1,0 +1,360 @@
+\ProvidesPackage{mystyle}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% PACKAGES
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% GENERAL TEXT
+\usepackage[T1]{fontenc}                                   % Use 8-bit encoding
+\usepackage[english]{babel}                                % English hyphenation
+\usepackage{titlesec}                                      % Set title spacing
+\usepackage{courier}
+\usepackage{lipsum}                                        % Dummy text
+\frenchspacing                                             % One space b/w sentences
+\usepackage{soul}                                          % Strike-through font, etc.
+\usepackage{siunitx}                                       % Generate SI units (useful in tables)
+%\usepackage{blindtext}                                     % Generate dummy text
+%\usepackage{mdframed}                                      % Fancy boxes
+
+%%% FILES
+\usepackage{subfiles}                                      % Load .tex from other folders
+%\usepackage{filecontents}
+
+%%% MATH
+\usepackage{amsmath,amsfonts,amsthm,amssymb,esint}         % Std. math packages
+\usepackage{relsize}                                       % larger math
+\usepackage{xfrac}                                         % Fancy fractions
+\usepackage{mathtools}                                     % Nicer math functions (extends amsmath)
+\usepackage{mathrsfs}                                      % Fancy scrolling found (e.g., F for Fourier)
+%\usepackage{bm}                                            % Bold math
+
+%%% FIGURES
+\usepackage{graphicx}                                      % Packages for figures
+\usepackage{rotating, pdflscape}                           % Sideways figures
+\usepackage{pgfplots}                                      % Very nice figures (PGF)
+\usepackage{tikz}                                          % Draw diagrams
+\usetikzlibrary{positioning,arrows}
+\usetikzlibrary{decorations.pathmorphing}
+\usetikzlibrary{decorations.markings}
+
+%%% TABLES
+\usepackage{threeparttable, tabularx}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}}
+\usepackage{booktabs}
+\usepackage{multirow}
+%\usepackage{longtable}
+%\usepackage{floatpag}                                      % No header/footer for rotated tables
+%\rotfloatpagestyle{empty}
+
+%%% LISTS
+\usepackage[shortlabels]{enumitem}                         % Package for lists
+\setlist[itemize]{noitemsep, topsep=0.25em, itemsep=0.5em}    % Compact lists
+
+%%% CAPTIONS
+\usepackage[font=small]{caption}                           % Smaller caption font
+\usepackage[font=small]{subcaption}                        % Smaller subcaption font
+%\usepackage[font=footnotesize]{caption}                           % Smaller caption font
+%\usepackage[font=footnotesize]{subcaption}                        % Smaller subcaption font
+
+%%% REFERENCES
+\usepackage[numbers,sort&compress]{natbib}                 % Fancy citations
+\usepackage{bibentry}
+
+%%% HYPERLINKS
+\usepackage{hyperref}                                      % Hyperlinks
+\hypersetup{
+   colorlinks,
+   citecolor=blue,
+   filecolor=black,
+   linkcolor=black,
+   urlcolor=blue
+   }
+%\usepackage{cleveref}                                     % Fancy cross-referencing
+
+%%% HEADER AND FOOTERS
+\usepackage{fancyhdr}
+\pagestyle{empty}
+\usepackage{emptypage}
+
+%%% ADD PDF COMMENTS
+%\usepackage[author={John Garrett}]{pdfcomment}
+%\definecolor{paleyellow}{RGB}{255, 247, 170}
+%\definecolor{palered}{RGB}{237, 135, 152}
+%\sethlcolor{paleyellow}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% NEW COMMANDS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% Roman numerals
+\newcommand{\RN}[1]{{\,\footnotesize\textup{\uppercase\expandafter{\romannumeral#1}}}}
+
+%%% Mark for revision
+\newcommand{\rev}[1]{{\textcolor{red}{#1}}}
+\newcommand{\new}[1]{{\textcolor{red}{#1}}}
+
+%%% Nicer math fractions
+\newcommand*\rfrac[2]{{}^{#1}\!/_{#2}}
+
+%%% Citations for astro chapter
+\newcommand{\citea}[1]{(\citeauthor{#1} \textcolor{blue}{[\citenum{#1}]})}
+\newcommand{\citeaa}[1]{\citeauthor{#1}~\textcolor{blue}{[\citenum{#1}]}}
+\newcommand{\citewithyear}[1]{\citeauthor{#1} \textcolor{blue}{in} \citeyear{#1}~\textcolor{blue}{[\citenum{#1}]}}
+
+%%% Footnote with no number
+\newcommand\blfootnote[1]{%
+  \begingroup
+  \renewcommand\thefootnote{}\footnote{#1}%
+  \addtocounter{footnote}{-1}%
+  \endgroup
+}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% SHORT-HAND
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% SIS related
+\newcommand{\qp}{quasiparticle}
+\newcommand{\qps}{quasiparticles}
+\newcommand{\qtc}{quasiparticle tunnelling current}
+\newcommand{\qtcs}{quasiparticle tunnelling currents}
+\newcommand{\wf}{wave function}
+\newcommand{\wfs}{wave functions}
+\newcommand{\iv}{I--V}
+\newcommand{\dciv}{\dc{} I--V}
+\newcommand{\thev}{Th\'evenin}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% SYMBOLS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% MISC SYMBOLS
+\def\cpp{{C\nolinebreak[4]\hspace{-.05em}\raisebox{.4ex}{\tiny\bf ++}}}
+\newcommand{\rrr}{\textsuperscript{\textregistered}}
+\newcommand{\ddd}{$^\circ$}
+\newcommand{\no}{$^\#$}
+\newcommand{\blank}{\textcolor{red}{????}}
+\newcommand{\jj}{j}
+\newcommand{\ac}{AC}
+\newcommand{\dc}{DC}
+
+%%% GENERAL PHYSICS CONSTANTS
+\newcommand{\kb}{k_\textup{B}} %BOLTZMANN
+
+%%% SUPERCONDUCTIVITY
+\newcommand{\tc}{T_\textup{c}}
+\newcommand{\ic}{I_\textup{c}}
+
+%%% UNITS
+\newcommand{\um}{\textmu m}
+\newcommand{\areaum}{\textmu m\textsuperscript{2}}
+\newcommand{\ohms}{\Omega}
+\newcommand{\ohm}{$\ohms$}
+
+%%% CIRCUITS
+% Source circuit
+\newcommand{\zs}{Z_\textup{s}}
+% Junction
+\newcommand{\zj}{Z_\textup{J}}
+\newcommand{\yj}{Y_\textup{J}}
+\newcommand{\ropt}{R_\textup{opt}}
+\newcommand{\rj}{R_{\textup{J}}}
+\newcommand{\cj}{C_{\textup{J}}}
+\newcommand{\wrc}{\omega\rn\cj}
+% Output
+\newcommand{\zout}{Z_\textup{out}}
+% Thevenin
+\newcommand{\vthev}{V_\mathrm{T}}
+\newcommand{\zthev}{Z_\mathrm{T}}
+% Thevenin (LO)
+\newcommand{\vtlo}{V_\mathrm{T}^\mathrm{LO}}
+\newcommand{\ztlo}{Z_\mathrm{T}^\mathrm{LO}}
+% Embedding circuit
+\newcommand{\zemb}{Z_\textup{emb}}       
+\newcommand{\remb}{R_\textup{emb}}       
+\newcommand{\xemb}{X_\textup{emb}}       
+\newcommand{\zt}{\zemb}       
+\newcommand{\vemb}{V_\textup{emb}}
+\newcommand{\vt}{\vemb}
+% Normalized values
+\newcommand{\vnorm}{\widetilde{V}}
+\newcommand{\znorm}{\widetilde{Z}}
+\newcommand{\inorm}{\widetilde{I}}
+% Junction (AC)
+\newcommand{\vw}{V_{\omega}}  % ac voltage across junction
+\newcommand{\vac}{\vw}        % ac voltage across junction
+\newcommand{\iw}{I_{\omega}}  % ac current through junction
+\newcommand{\iac}{\iw}        % ac current through junction
+\newcommand{\zw}{Z_\omega}
+\newcommand{\zac}{\zw}
+
+%%% RESPONSE FUNCTION
+\newcommand{\idc}{I_\textup{dc}}
+\newcommand{\idco}{I_\textup{dc}^0}
+\newcommand{\ikk}{I_\textup{kk}^0}
+\newcommand{\resp}{I_\textup{R}}          
+\newcommand{\vdc}{V_\textup{0}}    
+\newcommand{\vo}{\vdc}  
+
+%%% SURFACE IMPEDANCE
+\newcommand{\dl}{\lambda}
+\newcommand{\ls}{L_\textup{s}}
+
+%%% FREQUENCIES
+\newcommand{\f}{\nu}
+\newcommand{\fif}{\f_{_\textup{IF}}}
+\newcommand{\frf}{\f_{_\textup{RF}}}
+\newcommand{\flo}{\f_{_\textup{LO}}}
+\newcommand{\w}{\omega}
+\newcommand{\wif}{\w_{_\textup{IF}}}
+\newcommand{\wrf}{\w_{_\textup{RF}}}
+\newcommand{\wlo}{\w_{_\textup{LO}}}
+
+%%% DOS
+\newcommand{\dos}{\rho}
+\newcommand{\dosl}{\dos_{_\textup{L}}}
+\newcommand{\dosr}{\dos_{_\textup{R}}}
+\newcommand{\dosnm}{\mathcal{N}}
+
+%%% SIS JUNCTION PROPERTIES   
+\newcommand{\vgap}{V_\textup{gap}}             
+\newcommand{\igap}{I_\textup{gap}}
+\newcommand{\egap}{E_\textup{gap}}
+\newcommand{\wgap}{\w_\textup{gap}}
+\newcommand{\fgap}{\f_\textup{gap}}
+\newcommand{\rn}{R_\textup{n}}                 
+\newcommand{\rsg}{R_\textup{sg}}     
+\newcommand{\rdyn}{R_\textup{dyn}}
+\newcommand{\aj}{A_\textup{J}}
+\newcommand{\jc}{j_\textup{c}}
+\newcommand{\vph}{V_\textup{ph}}
+
+%%% NOISE PROPERTIES
+\newcommand{\pin}{P_\textup{in}}
+\newcommand{\tin}{T_\textup{in}}
+\newcommand{\pout}{P_\textup{out}}
+\newcommand{\tout}{T_\textup{out}}
+\newcommand{\pn}{P_\textup{N}}
+\newcommand{\tn}{T_\textup{N}}
+\newcommand{\tshot}{T_\textup{shot}}
+\newcommand{\thot}{T_\textup{H}}
+\newcommand{\tcold}{T_\textup{C}}
+\newcommand{\tphys}{T_\textup{phys}}
+\newcommand{\teff}{T_\textup{eff}}
+\newcommand{\tsys}{T_\textup{sys}}
+\newcommand{\tmin}{T_\textup{min}}
+\newcommand{\tif}{T_\textup{IF}}
+\newcommand{\gif}{G_\textup{IF}}
+\newcommand{\trf}{T_\textup{RF}}
+\newcommand{\grf}{G_\textup{RF}}
+\newcommand{\gc}{G_\textup{c}}
+\newcommand{\tsis}{T_\textup{SIS}}
+\newcommand{\gsis}{G_\textup{SIS}}
+\newcommand{\tq}{T_\textup{Q}}
+
+%%% STAR FORMATION
+\newcommand{\htwo}{$\mathrm{H}_2$}
+\newcommand{\co}{CO($J{=}1{\rightarrow}0$)}
+% frequencies
+\newcommand{\fobs}{\f_\textup{obs}}
+\newcommand{\fco}{\f_\textup{obs}}
+\newcommand{\frest}{\f_\textup{rest}}
+% luminosities
+\newcommand{\lir}{L_\textup{IR}}
+\newcommand{\lpah}{L_\textup{6.2}}
+\newcommand{\lco}{L'_\textup{CO}}
+% line areas
+\newcommand{\sco}{S_\textup{CO}\Delta v}
+\newcommand{\scoprime}{S^\prime_\textup{CO}\Delta v}
+\newcommand{\scoerror}{\epsilon_\textup{obs}\Delta v}
+\newcommand{\blerror}{\sigma_\textup{base}}
+\newcommand{\ewpah}{\textup{EW}_{6.2}}
+% redshifts
+\newcommand{\zir}{z_\textup{IR}}
+\newcommand{\zco}{z_\textup{obs}}
+% star formation rates
+\newcommand{\sfe}{\textup{SFE}}
+\newcommand{\sfr}{\textup{SFR}}
+\newcommand{\ssfr}{\textup{sSFR}}
+\newcommand{\ssfrms}{\textup{sSFR}_\textup{MS}}
+% masses
+\newcommand{\mstar}{M_*}
+\newcommand{\mhh}{M_{\textup{H}_2}}
+% units
+\newcommand{\peryear}{\textup{yr}^{-1}}
+\newcommand{\gyear}{\textup{Gyr}}
+\newcommand{\pergyear}{\gyear^{-1}}
+\newcommand{\msol}{\textup{M}_\odot}
+\newcommand{\lsol}{\textup{L}_\odot}
+\newcommand{\kms}{km s\textsuperscript{-1}}
+% misc
+\newcommand{\aco}{\alpha_\textup{CO}}
+\newcommand{\dlum}{D_\textup{L}}
+\newcommand{\snr}{\textup{S/N}}
+
+%%% FOCAL PLANE ARRAY
+\newcommand{\npix}{N_\mathrm{pixels}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% ENVIRONMENTS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\newenvironment{summary}
+%  {\begin{mdframed}[style=0,%
+%      leftline=false,rightline=false,leftmargin=2em,rightmargin=2em,%
+%          innerleftmargin=0pt,innerrightmargin=0pt,linewidth=0.75pt,%
+%      skipabove=7pt,skipbelow=7pt]\small {\em Summary:}}
+%  {\end{mdframed}}
+
+%\newenvironment{summary}
+%  {{\em Summary:}}{}
+
+%\newenvironment{aside}
+%  {\begin{mdframed}[style=0,%
+%      leftline=false,rightline=false,leftmargin=2em,rightmargin=2em,%
+%          innerleftmargin=0pt,innerrightmargin=0pt,linewidth=0.75pt,%
+%      skipabove=7pt,skipbelow=7pt]\small \textbf{Aside:}}
+%  {\end{mdframed}}
+
+%\newenvironment{question}
+%  {\begin{mdframed}[style=0,%
+%      leftline=false,rightline=false,leftmargin=2em,rightmargin=2em,%
+%          innerleftmargin=0pt,innerrightmargin=0pt,linewidth=0.75pt,%
+%      skipabove=7pt,skipbelow=7pt]\small {\em \textcolor{TableauRed}{Question:}}}
+%  {\end{mdframed}}
+  
+% \newtcbox{\mymath}[1][]{%
+%    nobeforeafter, math upper, tcbox raise base,
+%    enhanced, colframe=blue!30!black,
+%    colback=blue!30, boxrule=1pt,
+%    #1}
+    
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% PATHS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\graphicspath{{./chp_intro/images/}{./chp_mixer_theory/images/}{./app/images/}}
+\makeatletter
+\def\input@path{{./chp_intro/}{./chp_mixer_theory/}{./chp_conclusion/}}
+\makeatother
