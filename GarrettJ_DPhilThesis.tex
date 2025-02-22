@@ -1,0 +1,71 @@
+\documentclass[12pt,dvipsnames,twoside,openright]{ociamthesis}
+\usepackage{mystyle}
+
+\title{A 230 GHz Focal Plane Array Using \\[1ex] a Wide IF Bandwidth SIS Receiver}   
+\author{John Daniel Garrett}
+\college{New College}
+\degree{Doctor of Philosophy}    
+\degreedate{Trinity 2018}         
+
+%\includeonly{chp_intro}
+%\includeonly{chp_mixer_theory}
+%\includeonly{chp_conclusion}
+%\includeonly{app/app_shot_noise}
+
+% -----------------------------------------------------------------------------------------------------------
+% -----------------------------------------------------------------------------------------------------------
+
+\addtocontents{lot}{\vspace{-5mm}}
+
+\begin{document}
+
+%%% SETTINGS %%%
+% Set line spacing
+\baselineskip=18pt plus1pt
+% Set section numbering
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{1}
+% Set title spacing
+\titlespacing\section{0pt}{12pt plus 4pt minus 2pt}{0pt plus 2pt minus 2pt}
+\titlespacing\subsection{0pt}{12pt plus 4pt minus 2pt}{0pt plus 2pt minus 2pt}
+\titlespacing\subsubsection{0pt}{12pt plus 4pt minus 2pt}{0pt plus 2pt minus 2pt}
+% Set equation spacing
+\setlength{\abovedisplayskip}{1em}
+\setlength{\belowdisplayskip}{1em}
+
+%%% FRONT MATTER %%%
+\maketitle
+\subfile{misc_tex/dedication}        
+\subfile{misc_tex/abstract}        
+\subfile{misc_tex/originality}
+\subfile{misc_tex/acknowledgements}  
+\begin{romanpages}          
+\tableofcontents          
+\listoffigures
+\listoftables
+\end{romanpages}           
+
+%%% SET HEADER %%%
+\setlength{\parskip}{0.5em}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[RO]{\emph{\rightmark}}
+\fancyhead[LE]{\emph{\leftmark}}
+\setlength{\headheight}{15pt}
+
+%%% CHAPTERS %%%
+\include{chp_intro}
+\include{chp_mixer_theory}
+\include{chp_conclusion}
+
+%%% APPENDIX %%%
+\appendix
+\include{app/app_shot_noise}
+
+%%% REFERENCES %%%
+\addcontentsline{toc}{chapter}{Bibliography}
+\renewcommand{\bibname}{References}
+\bibliographystyle{ref/IEEEtranN}
+\bibliography{ref/ref-fixed}
+
+\end{document}
